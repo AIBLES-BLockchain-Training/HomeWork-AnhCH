@@ -73,16 +73,11 @@ contract LoanSystem is FinancialOperations {
 
     mapping(address => LoanRequest) public loanRequests;
 
-    modifier onlyManagerOrAdmin() {
-        require(managers[msg.sender] || msg.sender == admin, "Only managers or admin can call this function");
-        _;
-    }
-
     function requestLoan(uint256 _amount) public {
         loanRequests[msg.sender] = LoanRequest(msg.sender, _amount, false);
     }
 
-    function approveLoan(address _borrower) public onlyManagerOrAdmin {
+    function approveLoan(address _borrower) public onlyManager {
         loanRequests[_borrower].approved = true;
         balances[_borrower] += loanRequests[_borrower].amount;
     }
