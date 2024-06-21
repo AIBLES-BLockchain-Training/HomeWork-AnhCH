@@ -1,0 +1,19 @@
+{
+  "name": "hardhatasset",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.0.2",
+    "coverage": "^0.4.1",
+    "hardhat": "^2.22.4",
+    "hardhat-contract-sizer": "^2.10.0"
+  }
+}
